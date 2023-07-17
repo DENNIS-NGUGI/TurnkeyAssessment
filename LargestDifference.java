@@ -17,37 +17,29 @@ public class LargestDifference {
             numbers.add(Integer.parseInt(numString));
         }
 
+        // Find the largest difference in the list
         int largestDifference = findLargestDifference(numbers);
         System.out.println("Largest difference: " + largestDifference);
+        scanner.close();
     }
 
     public static int findLargestDifference(List<Integer> numbers) {
-        int size = numbers.size();
-
-        // Return 0 if the list has less than two elements
-        if (size < 2) {
-            return 0;
-        }
-
-        int minNum = numbers.get(0);  // Initialize minimum number to the first element
-        int maxDiff = 0;  // Initialize the maximum difference to 0
+        int minNum = numbers.get(0); // Initialize minimum number to the first element
+        int maxDiff = 0; // Initialize the maximum difference to 0
 
         // Iterate through the list starting from the second element
-        for (int i = 1; i < size; i++) {
-            int currentNum = numbers.get(i);
+        for (int currentNum : numbers) {
             int diff = currentNum - minNum;
 
             // Update the maximum difference if a larger difference is found
-            if (diff > maxDiff) {
-                maxDiff = diff;
-            }
+            maxDiff = Math.max(maxDiff, diff);
 
             // Update the minimum number if a smaller number is found
-            if (currentNum < minNum) {
-                minNum = currentNum;
-            }
+            minNum = Math.min(minNum, currentNum);
         }
 
         return maxDiff;
     }
 }
+
+
