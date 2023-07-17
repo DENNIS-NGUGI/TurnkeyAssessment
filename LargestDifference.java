@@ -41,5 +41,13 @@ public class LargestDifference {
         return maxDiff;
     }
 }
+/*
+ * Use enhanced for loop: Instead of iterating through the list using a
+ * traditional for loop, we can use an enhanced for loop (also known as a
+ * for-each loop) to simplify the code.
+ * 
+ * Use Math.max instead of if statement: We can use the Math.max function to
+ * update the maximum difference in a more concise way
+ */
 
 
